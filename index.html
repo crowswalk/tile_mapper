@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+<meta charset="UTF-8">
+<link rel="icon" href="data:;base64,=">
+<script src="js/p5.js"></script>
+<script src="js/p5.sound.js"></script>
+<script src="sketch.js"></script>
+<meta http-equiv="cache-control" content="max-age=0" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="expires" content="0" />
+<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+<meta http-equiv="pragma" content="no-cache" />
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded&display=swap');
+
+    body {
+        margin: 0;
+        font-family: 'Encode Sans Expanded', sans-serif;
+        background-color: #85958d;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    #container {
+        margin: auto;
+        margin-top: 1em;
+        width: 60%;
+    }
+
+    #game {
+        display: block;
+        padding: 8px;
+        margin: auto;
+        width: fit-content;
+        background-color: #111110;
+    }
+
+
+    .imagescontain {
+        width: fit-content;
+        height: min-content;
+        display: flex;
+        margin: auto;
+        align-items: center;
+        justify-content: center;
+    }
+
+    img {
+        display: block;
+        padding: 1em;
+        height: unset;
+    }
+
+    a {
+        padding: 1em;
+        font-size: 2em;
+    }
+</style>
+
+</head>
+
+<body>
+    <div id="container">
+        <h1>Rapid Tileset Designer</h1>
+        <div id="game"></div>
+        <p>This game is actually <em>not</em> a game, but a tool for rapidly envisioning a tileset in a level. The real
+            functionality is what's under the hood; I've created an intuitive, fast workflow for desigining the visual
+            aesthetics of a tilesheet and tile-based level. The p5 canvas displays how the level would look through a
+            game camera, and the white square (representing the player) can be moved with <b>WASD controls.</b></p>
+        <p>Above the game screen, the tile sheet is displayed. You can <b>left-click</b> to draw on the tile sheet, and
+            <b>left-click while holding Alt</b> to pick a drawing color from the mouse position. The level will be
+            updated in realtime.</p>
+        <h3>How it works:</h3>
+        <p>As the designer, you only need to provide two images: a <b>Tile Sheet</b> and a <b>Level Map</b>.</p>
+        <div class="imagescontain"><img src="siteimages/tileSheet.png" style="width: 390px; height: 414px"><img
+                src="siteimages/levelMap.png"></div>
+        <p>At the bottom of the tile sheet, there's a key with colors that correspond to the tiles.</p>
+        <p>The colors on the sheet show the program how to map the tiles on the level map. Level layouts can be designed
+            pretty quickly because the maps are actually very tiny; each tile is represented by one pixel.</p>
+        <div class="imagescontain"><img src="images/tile_sheet.png"><img src="images/level_map.png"
+                style="width: 35px; height: 28px"><img src="images/collision_map.png" style="width: 35px; height: 28px">
+        </div>
+        <p>Following the same format as the level map, you can also provide a collision map, which tells the canvas
+            where your player collides with walls and other solid objects.</p>
+        <p>If I expand on this concept in the future, I'd like to add the ability to edit the tile map in-browser (right
+            now, you can only edit it locally)</p>
+        <a href="https://docs.google.com/document/d/1V12K8ovoOrJuuZicPQvVNyL3OBszDqAdwWP2nYNwaBI/edit?usp=sharing">Project
+            Documentation >></a>
+    </div>
+
+</body>
+
+</html>
